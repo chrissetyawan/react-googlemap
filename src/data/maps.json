@@ -1,0 +1,547 @@
+{
+   "data": [
+      {
+         "id": "5c7f62f87e409ee0933b0bb7",
+         "category": "apartment",
+         "name": "Taman Rasuna",
+         "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+         "address": "Jl. HR Rasuna Said RT.2/RW.5",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.2168367,
+            "lng": 106.836633237294
+         },
+         "facilities": [
+            "access_card",
+            "atm_center",
+            "basketball_court",
+            "bbq_pit",
+            "drug_store",
+            "function_hall",
+            "gym",
+            "jogging_track",
+            "laundry",
+            "mini_market",
+            "playground",
+            "swimming_pool",
+            "tennis_court"
+         ],
+         "images" : ["/nature0.jpg", "/nature1.jpg", "/nature2.jpg", "/nature3.jpg"]
+      },
+      {
+         "id": "5c7f62fd7e409ee0933b0bdf",
+         "category": "apartment",
+         "name": "Ciputra World 1 Jakarta",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Prof Dr. Satrio Kav. 3-5",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.22412095,
+            "lng": 106.823931700063
+         },
+         "facilities": [
+            "access_card",
+            "atm_center",
+            "basketball_court",
+            "bbq_pit",
+            "drug_store",
+            "function_hall",
+            "gym",
+            "jogging_track",
+            "laundry",
+            "playground",
+            "private_lift",
+            "restaurant",
+            "salon",
+            "sauna",
+            "super_market",
+            "swimming_pool",
+            "tennis_court"
+         ],
+         "images" : ["/nature1.jpg", "/nature2.jpg", "/nature3.jpg", "/nature0.jpg"]
+      },
+      {
+         "id": "5c7f63047e409ee0933b0c1d",
+         "category": "apartment",
+         "name": "Pakubuwono Spring",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Teuku Nyak Arief No. 9",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.2324958,
+            "lng": 106.7882721
+        },
+         "facilities": [
+            "access_card",
+            "atm_center",
+            "basketball_court",
+            "bbq_pit",
+            "function_hall",
+            "gym",
+            "jogging_track",
+            "laundry",
+            "mini_market",
+            "movie_theater",
+            "playground",
+            "private_lift",
+            "restaurant",
+            "salon",
+            "sauna",
+            "swimming_pool",
+            "tennis_court"
+         ],
+         "images" : ["/nature2.jpg", "/nature3.jpg", "/nature0.jpg", "/nature1.jpg"]
+      },
+      {
+         "id": "5c7f63067e409ee0933b0c2d",
+         "category": "apartment",
+         "name": "Pearl Garden",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Jend. Gatot Subroto Kav. 6-7",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.2230338,
+            "lng": 106.81618571431
+        },
+         "facilities": [
+            "atm_center",
+            "bbq_pit",
+            "function_hall",
+            "gym",
+            "jogging_track",
+            "laundry",
+            "sauna",
+            "swimming_pool"
+         ],
+         "images" : ["/nature3.jpg", "/nature0.jpg", "/nature1.jpg", "/nature2.jpg"]
+      },
+      {
+         "id": "5c7f63077e409ee0933b0c35",
+         "category": "apartment",
+         "name": "Permata Hijau Residences",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Kalimaya No. 48",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.22455985,
+            "lng": 106.787410435076
+        },
+         "facilities": [
+            "access_card",
+            "atm_center",
+            "bbq_pit",
+            "function_hall",
+            "gym",
+            "jogging_track",
+            "laundry",
+            "mini_market",
+            "playground",
+            "sauna",
+            "swimming_pool",
+            "tennis_court"
+         ],
+         "images" : ["/nature0.jpg", "/nature1.jpg", "/nature2.jpg", "/nature3.jpg"]
+      },
+      {
+         "id": "5c7f630a7e409ee0933b0c51",
+         "category": "apartment",
+         "name": "Senayan City Residence",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Asia Afrika RT.1/RW.3",
+         "city": "JAKARTA PUSAT",
+         "coordinate": {
+            "lat": -6.220632,
+            "lng": 106.796630824759
+        },
+         "address_country": "Indonesia",
+         "facilities": [
+            "access_card",
+            "atm_center",
+            "basketball_court",
+            "drug_store",
+            "function_hall",
+            "gym",
+            "laundry",
+            "mini_market",
+            "movie_theater",
+            "playground",
+            "private_lift",
+            "restaurant",
+            "salon",
+            "super_market",
+            "swimming_pool",
+            "tennis_court"
+         ],
+         "images" : ["/nature1.jpg", "/nature2.jpg", "/nature3.jpg", "/nature0.jpg"]
+      },
+      {
+         "id": "5c7f630a7e409ee0933b0c57",
+         "category": "apartment",
+         "name": "Senopati Penthouse",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Senopati Raya 44A",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.2296822,
+            "lng": 106.8044217
+        },
+         "facilities": [
+            "access_card",
+            "gym",
+            "laundry",
+            "private_lift",
+            "restaurant",
+            "swimming_pool"
+         ],
+         "images" : ["/nature2.jpg", "/nature3.jpg", "/nature0.jpg", "/nature1.jpg"]
+      },
+      {
+         "id": "5c7f630a7e409ee0933b0c59",
+         "category": "apartment",
+         "name": "Senopati Suites",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Senopati No. 41 RT.8/RW.2",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.2292831,
+            "lng": 106.8027622
+        },
+         "facilities": [
+            "access_card",
+            "gym",
+            "jogging_track",
+            "laundry",
+            "private_lift",
+            "restaurant",
+            "swimming_pool"
+         ],
+         "images" : ["/nature3.jpg", "/nature0.jpg", "/nature1.jpg", "/nature2.jpg"]
+      },
+      {
+         "id": "5c7f630d7e409ee0933b0c6d",
+         "category": "apartment",
+         "name": "Sudirman Park Apartment",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. K.H. Mas Mansyur Kav. 35 RT.12/RW.11",
+         "city": "JAKARTA PUSAT",
+         "coordinate": {
+            "lat": -6.2056437,
+            "lng": 106.818275640584
+        },
+         "facilities": [
+            "access_card",
+            "atm_center",
+            "drug_store",
+            "function_hall",
+            "gym",
+            "laundry",
+            "mini_market",
+            "playground",
+            "restaurant",
+            "salon",
+            "swimming_pool"
+         ],
+         "images" : ["/nature0.jpg", "/nature1.jpg", "/nature2.jpg", "/nature3.jpg"]
+      },
+      {
+         "id": "5c7f630d7e409ee0933b0c70",
+         "category": "apartment",
+         "name": "Sudirman Residence",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Setia Budi Barat No. 2 RT.2/RW.2",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.20901415,
+            "lng": 106.823681218228
+        },
+         "facilities": [
+            "access_card",
+            "gym",
+            "jogging_track",
+            "laundry",
+            "playground",
+            "private_lift",
+            "swimming_pool"
+         ],
+         "images" : ["/nature1.jpg", "/nature2.jpg", "/nature3.jpg", "/nature0.jpg"]
+      },
+      {
+         "id": "5c7f630d7e409ee0933b0c74",
+         "category": "apartment",
+         "name": "Sudirman Tower Condominium",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Garnisun 1 No. 8 RT.5/RW.4",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.2201838,
+            "lng": 106.815964697538
+        },
+         "facilities": [
+            "access_card",
+            "atm_center",
+            "gym",
+            "laundry",
+            "mini_market",
+            "playground",
+            "restaurant",
+            "sauna",
+            "swimming_pool",
+            "tennis_court"
+         ],
+         "images" : ["/nature2.jpg", "/nature3.jpg", "/nature0.jpg", "/nature1.jpg"]
+      },
+      {
+         "id": "5c7f630f7e409ee0933b0c84",
+         "category": "apartment",
+         "name": "The Bellagio Residence",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Mega Kuningan Barat No. 3 RT.5/RW.2",
+         "city": "JAKARTA SELATAN",
+         "coordinate": {
+            "lat": -6.22739095,
+            "lng": 106.824252983246
+        },
+         "facilities": [
+            "access_card",
+            "atm_center",
+            "drug_store",
+            "function_hall",
+            "gym",
+            "laundry",
+            "mini_market",
+            "playground",
+            "restaurant",
+            "salon",
+            "sauna",
+            "super_market",
+            "swimming_pool",
+            "tennis_court"
+         ],
+         "images" : ["/nature3.jpg", "/nature0.jpg", "/nature1.jpg", "/nature2.jpg"]
+      },
+
+      {
+         "id": "5d36acb83d9e3cdf0fe6640d",
+         "name": "Gedung Bank Panin Senayan",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Jend Sudirman kav 1",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.228003,
+            "lng": 106.79956
+         },
+         "facilities": [],
+         "images" : ["/nature0.jpg", "/nature1.jpg", "/nature2.jpg", "/nature3.jpg"]
+      },
+      {
+         "id": "5d36acbf3d9e3cdf0fe66413",
+         "name": "Gedung BRI 2",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Jend Sudirman kav 44-46",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.21699,
+            "lng": 106.81442
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Minimarket",
+            "Restaurant"
+         ],
+         "images" : ["/nature1.jpg", "/nature2.jpg", "/nature3.jpg", "/nature0.jpg"]
+      },
+      {
+         "id": "5d36acdd3d9e3cdf0fe66425",
+         "name": "Landmark Tower 2",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Jend Sudirman Kav 1",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.203775,
+            "lng": 106.82374
+         },
+         "facilities": [
+               "ATM",
+               "Bank",
+               "Foodcourt",
+               "Minimarket",
+               "Restaurant"
+         ],
+         "images" : ["/nature2.jpg", "/nature3.jpg", "/nature0.jpg", "/nature1.jpg"]
+      },
+      {
+         "id": "5d36acf13d9e3cdf0fe66433",
+         "name": "One Pacific Place",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Jend Sudirman Kav. 52-53",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.223768,
+            "lng": 106.80982
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Foodcourt",
+            "Minimarket",
+            "Musalla",
+            "Restaurant"
+         ],
+         "images" : ["/nature3.jpg", "/nature0.jpg", "/nature1.jpg", "/nature2.jpg"]
+      },
+      {
+         "id": "5d36ad1b3d9e3cdf0fe66451",
+         "name": "Sequis Center",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Jend. Sudirman Kby. Baru,, Senayan, Kebayoran Baru, RT.5/RW.3",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.2246704,
+            "lng": 106.80638
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Foodcourt",
+            "Minimarket",
+            "Restaurant"
+         ],
+         "images" : ["/nature0.jpg", "/nature1.jpg", "/nature2.jpg", "/nature3.jpg"]
+      },
+      {
+         "id": "5d36ad2c3d9e3cdf0fe6645b",
+         "name": "The Energy Tower",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Jend Sudirman Kav 52 - 53 Lot 11 SCBD",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.22583,
+            "lng": 106.80657
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Foodcourt",
+            "Minimarket",
+            "Restaurant"
+         ],
+         "images" : ["/nature1.jpg", "/nature2.jpg", "/nature3.jpg", "/nature0.jpg"]
+      },
+      {
+         "id": "5d36ad353d9e3cdf0fe66463",
+         "name": "Wisma GKBI",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Jend Sudirman Kav 28",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.217429,
+            "lng": 106.81291
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Foodcourt",
+            "Minimarket",
+            "Musalla",
+            "Restaurant"
+         ],
+         "images" : ["/nature2.jpg", "/nature3.jpg", "/nature0.jpg", "/nature1.jpg"]
+      },
+      {
+         "id": "5d36ad793d9e3cdf0fe66493",
+         "name": "Wisma Mandiri",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jalan M.H. Thamrin Kav. 5",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.183692,
+            "lng": 106.82364
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Foodcourt",
+            "Minimarket",
+            "Restaurant"
+         ],
+         "images" : ["/nature3.jpg", "/nature0.jpg", "/nature1.jpg", "/nature2.jpg"]
+      },
+      {
+         "id": "5d36ad7c3d9e3cdf0fe66495",
+         "name": "Wisma Nusantara",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. M.H. Thamrin No. 59",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.193995,
+            "lng": 106.8238
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Foodcourt",
+            "Minimarket",
+            "Restaurant"
+         ],
+         "images" : ["/nature0.jpg", "/nature1.jpg", "/nature2.jpg", "/nature3.jpg"]
+      },
+      {
+         "id": "5d36ada03d9e3cdf0fe664ab",
+         "name": "Menara Citicon",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Let. Jend. S. Parman Kav 72",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.19264,
+            "lng": 106.797745
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Foodcourt",
+            "Minimarket",
+            "Restaurant"
+         ],
+         "images" : ["/nature1.jpg", "/nature2.jpg", "/nature3.jpg", "/nature0.jpg"]
+      },
+      {
+         "id": "5d36adb33d9e3cdf0fe664b7",
+         "name": "Griya Sinta",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Tomang Raya No 39",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.1762147,
+            "lng": 106.801
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Foodcourt",
+            "Minimarket",
+            "Restaurant"
+         ],
+         "images" : ["/nature2.jpg", "/nature3.jpg", "/nature0.jpg", "/nature1.jpg"]
+      },
+      {
+         "id": "5d36ade33d9e3cdf0fe664d9",
+         "name": "Graha Dinamika",
+         "description": "Lorem ipsum dolor sit amet, urna pellentesque reprehenderit amet, wisi neque nisl magna cras massa, pharetra laoreet lectus mauris commodo lacus",
+         "address": "Jl. Tanah Abang 2",
+         "category": "office",
+         "coordinate": {
+            "lat": -6.175587,
+            "lng": 106.814964
+         },
+         "facilities": [
+            "ATM",
+            "Bank",
+            "Foodcourt",
+            "Minimarket",
+            "Restaurant"
+         ],
+         "images" : ["/nature3.jpg", "/nature0.jpg", "/nature1.jpg", "/nature2.jpg"]
+      }
+   ]
+}
