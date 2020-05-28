@@ -2,9 +2,10 @@
 
 ## Getting Started
 
-Put the Google Maps API Key on .env File
-
 ```bash
+cp .env.example .env
+put the Google Maps API Key on .env File
+
 npm install
 npm start
 ```
