@@ -87,6 +87,7 @@ class Main extends Component {
       if(this.state.filteredMap[i]) items.push(this.state.filteredMap[i]);
     }
     this.setState({ items : items })
+    this.setSelectedMark(null);
   }
 
   onDetailClick = (selected) => {
