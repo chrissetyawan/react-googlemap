@@ -38,8 +38,8 @@ Rest api design
   get    /places?page=1&name=park&category=apartment     get map list with filtering and pagination
   get    /places/5                 get a map
   post   /places/              	   create a map
-  put    /places/5         	   update a map
-  delete /api/posts/5              delete a map
+  put    /places/5         	       update a map
+  delete /places/5                 delete a map
     
   DB Structure
   {
