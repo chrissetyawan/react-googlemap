@@ -6,7 +6,7 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps";
-import axios from "axios";
+import API from "../utils/api"
 
 class Main extends Component {
   constructor( props ) {
@@ -87,7 +87,8 @@ class Main extends Component {
   }
 
   getPlaces() {
-    axios.get(`http://localhost:3001/places?page=${this.state.meta.page}&keyword=${this.state.selectedName}&category=${this.state.selectedCategory}`)
+    // axios.get(`http://localhost:3001/places?page=${this.state.meta.page}&keyword=${this.state.selectedName}&category=${this.state.selectedCategory}`)
+    API.get(`places?page=${this.state.meta.page}&keyword=${this.state.selectedName}&category=${this.state.selectedCategory}`)
       .then(res => {
         this.setState({ 
           meta : res.data.meta,

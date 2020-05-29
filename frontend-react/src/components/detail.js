@@ -10,7 +10,7 @@ import {
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import axios from "axios";
+import API from "../utils/api"
 
 class Detail extends Component {
     constructor( props ) {
@@ -28,7 +28,7 @@ class Detail extends Component {
       }
 
     getDetail(id) {
-      axios.get(`http://localhost:3001/places/${id}`)
+      API.get(`places/${id}`)
         .then(res => {
           console.log(res.data)
           
