@@ -1,6 +1,6 @@
-# Google Maps in React
+# Google Maps with MERN Stack
 
-Using MERN Stack with MongoDB
+MongoDB, Express js, React js, Node js
 
 
 ## Backend Node
