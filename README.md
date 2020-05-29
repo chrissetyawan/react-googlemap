@@ -30,7 +30,7 @@ Open Browser with Url: http://localhost:3000/
 
 ```
 
-## Rest api design
+## Rest API design
 
 ```
   get      /places?page=1&name=park&category=apartment     get map list with filtering and pagination
