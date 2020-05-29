@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Main from './components/main';
 import Detail from './components/detail';
+import Crud from './components/crud/index'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <Router>
         <Route exact path="/" component={Main} />
         <Route path="/detail/:id" component={Detail} />
+        <Route path="/crud" component={Crud} />
       </Router>
     )
   }

@@ -6,6 +6,7 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps";
+import { Link } from "react-router-dom";
 import API from "../utils/api"
 
 class Main extends Component {
@@ -56,7 +57,6 @@ class Main extends Component {
 
   onPrevClick = async () => {
     let meta = this.state.meta
-    console.log(meta.hasPrevPage, meta.page)
 
     if (meta.hasPrevPage) {
       await this.setState({ meta : { page : meta.prevPage } });
@@ -66,7 +66,6 @@ class Main extends Component {
 
   onNextClick = async () => {
     let meta = this.state.meta
-    console.log(meta.hasNextPage, meta.page)
 
     if (meta.hasNextPage) {
       await this.setState({ meta : { page : meta.nextPage } });
@@ -87,7 +86,6 @@ class Main extends Component {
   }
 
   getPlaces() {
-    // axios.get(`http://localhost:3001/places?page=${this.state.meta.page}&keyword=${this.state.selectedName}&category=${this.state.selectedCategory}`)
     API.get(`places?page=${this.state.meta.page}&keyword=${this.state.selectedName}&category=${this.state.selectedCategory}`)
       .then(res => {
         this.setState({ 
@@ -197,13 +195,16 @@ class Main extends Component {
                </select>
                <p></p>
            </div>
+
+           <span><Link to="/crud" >Go to CRUD</Link></span>
+           
         </div>
 
         <div className="body-container" >
 
           <div className="left-container">
 
-            <div className="content-map">
+            <div className="box-container">
               { box }
             </div>
 

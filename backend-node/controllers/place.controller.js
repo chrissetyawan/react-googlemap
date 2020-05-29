@@ -1,7 +1,32 @@
 const Place = require('../models/place.model.js');
 
-// Retrieve all data with pagination
-exports.findAll = async (req, res) => {
+const placesSerializer = data => ({
+    id: data.id,
+    name: data.name,
+    category: data.category,
+    description: data.description,
+    address: data.address,
+    city: data.city,
+    coordinate:  data.coordinate,
+    facilities: data.facilities,
+    images : data.images
+});
+
+// Retrieve all data
+exports.findAll =  (req, res) => {
+    Place.find()
+    .then(async data => {
+        const places = await Promise.all(data.map(placesSerializer));
+        res.send(places);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving places."
+        });
+    });
+};
+
+// Retrieve data with pagination
+exports.findPagination = async (req, res) => {
     const { page = 1, keyword = "", category = "all" } = req.query;
     // console.log(req.query)
 
@@ -30,7 +55,8 @@ exports.findAll = async (req, res) => {
         }
     )
     
-    const { docs: places, ...meta } = paginated;
+    const { docs: data, ...meta } = paginated;
+    const places = await Promise.all(data.map(placesSerializer));
     res.json({ meta, places });
 };
 
@@ -72,10 +98,7 @@ exports.create = (req, res) => {
         description: req.body.description,
         address: req.body.address,
         city: req.body.city,
-        coordinate: {
-          lat: req.body.coordinate.lat,
-          lng: req.body.coordinate.lng
-        },
+        coordinate: req.body.coordinate,
         facilities: req.body.facilities,
         images :req.body.images
     });
@@ -99,6 +122,7 @@ exports.update = (req, res) => {
             message: "Place name can not be empty"
         });
     }
+
     // Find place and update it with the request body
     Place.findByIdAndUpdate(req.params.id, {
         name: req.body.name,
@@ -106,10 +130,7 @@ exports.update = (req, res) => {
         description: req.body.description,
         address: req.body.address,
         city: req.body.city,
-        coordinate: {
-            lat: req.body.coordinate.lat,
-            lng: req.body.coordinate.lng
-        },
+        coordinate: req.body.coordinate,
         facilities: req.body.facilities,
         images :req.body.images
     }, {new: true})
@@ -141,7 +162,7 @@ exports.delete = (req, res) => {
                  message: "Place not found with id " + req.params.id
              });
          }
-         res.send({message: "Place deleted successfully!"});
+         res.send({ id: req.params.id, message: "Place deleted successfully!" });
      }).catch(err => {
          if(err.kind === 'ObjectId' || err.name === 'NotFound') {
              return res.status(404).send({
