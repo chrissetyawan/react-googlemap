@@ -1,4 +1,4 @@
-# Google Maps with MERN Stack
+# Google Map with MERN Stack
 
 MongoDB, Express js, React js, Node js
 
