@@ -1,6 +1,24 @@
 # Google Maps in React
 
+Using MERN Stack
+
 ## Getting Started
+
+## Backend Node
+
+create mongo database with name "gmapCrud"
+import dump file into mongodb with command "mongorestore --gzip --archive=gmapCrud.archive"
+
+```bash
+npm install
+npm start
+
+backend will run on port 3001
+
+```
+
+
+## Frontend React
 
 ```bash
 cp .env.example .env, 
@@ -23,5 +41,4 @@ Detail Page
 
 Todo : 
 - Responsive Layout
-- Using backend API
-- Using pagination server side
+- Implement CRUD on frontend

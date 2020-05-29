@@ -1,0 +1,30 @@
+{
+  "name": "backend-node-googlemap",
+  "version": "1.0.0",
+  "description": "Restful API for Simple CRUD",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "RestAPI",
+    "MongoDB",
+    "Mongoose"
+  ],
+  "author": "cbonaudo",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.9",
+    "mongoose-paginate-v2": "^1.3.9",
+    "node-cron": "^2.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}

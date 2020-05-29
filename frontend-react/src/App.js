@@ -3,8 +3,8 @@ import {
   BrowserRouter as Router,
   Route
 } from "react-router-dom";
-import Main from './components/Main';
-import Detail from './components/Detail';
+import Main from './components/main';
+import Detail from './components/detail';
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
       <Router>
         <Route exact path="/" component={Main} />
         <Route path="/detail/:id" component={Detail} />
-    </Router>
+      </Router>
     )
   }
 }

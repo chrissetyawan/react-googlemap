@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as maps from "../data/maps.json";
 import styles from './detail.module.css';
 
 import {
@@ -11,6 +10,7 @@ import {
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import axios from "axios";
 
 class Detail extends Component {
     constructor( props ) {
@@ -20,20 +20,31 @@ class Detail extends Component {
             id: null,
             name: null,
             description: null,
+            coordinate: {},
             images: [],
             facilities: []
           },
         }
       }
 
+    getDetail(id) {
+      axios.get(`http://localhost:3001/places/${id}`)
+        .then(res => {
+          console.log(res.data)
+          
+          this.setState({ 
+            data : res.data
+          })
+          
+        })
+        .catch(err => {
+          console.log("API GET : Error " + err.response);
+        });
+    }
+
     async componentDidMount() {
         let id = this.props.match.params.id
-        
-        let filteredMap = maps.data.filter(x => {
-            return x.id.toLowerCase().match(id)
-        })
-
-        this.setState({ data: filteredMap[0] });
+        this.getDetail(id)
     }
 
     render() {

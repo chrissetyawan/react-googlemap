@@ -16,6 +16,8 @@ code {
 .main-container {
   display : flex;
   flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 .header-container {
@@ -23,7 +25,7 @@ code {
   display : flex;
   flex-direction: row;
   justify-content: center;
-  height: 70px;
+  min-height: 60px;
   border-bottom: 2px solid #aaa9ad ;
 }
 
@@ -35,9 +37,19 @@ code {
 }
 
 .header-container > div > input {
-  width: 200px;
+  width: 250px;
   padding: 7px 10px;
+  padding-left: 35px;
   border: 2px solid #aaa9ad ;
+  background-image: url("/search-icon.png");
+  background-size: 20px;
+  background-position: 7px 5px;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+.header-container > div > input:focus {
+  outline: none;
 }
 
 .header-container > div > select {
@@ -47,55 +59,66 @@ code {
 
 .body-container {
   display : flex;
-  flex-direction: row flex;
+  flex-direction: row;
+  height: calc(100vh-60px);
+  max-height: calc(100vh-60px);
 }
 
 .left-container {
   display : flex;
   flex-direction: column;
-  width: 50%;
+  width: 40%;
+  
+  margin: 10px;
 }
 
 .right-container {
-  width: 50%;
+  width: 60%;
+  max-width: 60%;
 }
 
 .content-map {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 10px 0 0 10px;
+  height: 80vh;
   min-height: 80vh;
 }
 .pagination {
   display: flex;
-  justify-content: center;
-  justify-items: center;
-  padding: 10px 0 30px 0;
+  /* justify-content: center;
+  justify-items: center; */
+  align-items: center;
+  padding: 10px 15px 30px 0;
 }
-.pagination > .btn {
-  margin-right: 20px;
+
+.pagination > span {
+  width: 50%;
+  font-size: 12px;
+  text-align: center;
+}
+.pagination > div  {
+  width: 50%;
+  text-align: center;
+}
+.pagination > div > .btn {
   width: 70px;
+}
+.pagination > div > .btn:first-child {
+  margin-right: 10px;
 }
 .item {
   display : flex;
   flex-direction: column;
   width: 45%;
-  height: 260px;
+  height: 280px;
   border: 1px solid #aaa9ad ;
   margin: 10px;
 }
-.item-empty {
-  width: 45%;
-  height: 280px;
-  border: none;
-  margin: 10px;
-}
-
 .image-map {
   text-align: center;
-  height: 130px;
-  max-height: 130px;
+  height: 120px;
+  max-height: 120px;
   width: 100%;
   object-fit: cover;
 }
@@ -105,7 +128,7 @@ code {
   overflow-y: auto;
   word-wrap: break-word;
   padding: 5px 10px;
-  min-height: 70px;
+  min-height: 100px;
 }
 
 .item-body-title {

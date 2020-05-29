@@ -6,88 +6,72 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps";
-
-import * as maps from "../data/maps.json";
+import axios from "axios";
 
 class Main extends Component {
   constructor( props ) {
     super( props );
     this.state = {
-      selectedMark: null,
+      meta: {
+        page: 1,
+        hasPrevPage: false,
+        hasNextPage: true,
+        prevPage: null,
+        nextPage: 2
+      },
+      places : [],
+      selectedPlace: null,
       selectedCategory: "all",
       selectedName: "",
-      filteredMap: maps.data.filter(l => {return l }),
-      items : [],
-      index : 0
     }
   }
 
   handleChange = async (event) => {
     await this.setState({ 
-      index : 0, 
+      meta : { 
+        page : 1, 
+        hasPrevPage: false,
+        hasNextPage: true 
+      },
       selectedName: event.target.value 
     });
-    this.filterMap();
+    this.getPlaces();
   }
 
   onDropdownChange = async (event) => {
     await this.setState({ 
-      index : 0,
+      meta : { 
+        page : 1, 
+        hasPrevPage: false,
+        hasNextPage: true 
+      },
       selectedCategory: event.target.value
     });
-    this.filterMap();
+    this.getPlaces();
   }
 
-  filterMap = async () => {
-    const {selectedName, selectedCategory} = this.state
-
-    if (selectedCategory === "all") {
-      await this.setState({
-        filteredMap : maps.data.filter(x => {
-          return x.name.toLowerCase().match(selectedName)
-        })
-      })
-    }
-    else {
-      await this.setState({
-        filteredMap : maps.data.filter(x => {
-          return x.name.toLowerCase().match(selectedName) && x.category===selectedCategory;
-        })
-      })
-    }
-
-    this.setItems(0)
+  setSelectedPlace = (place) => {
+    this.setState({selectedPlace : place})
   }
 
-  setSelectedMark = (mark) => {
-    this.setState({selectedMark : mark})
-  }
+  onPrevClick = async () => {
+    let meta = this.state.meta
+    console.log(meta.hasPrevPage, meta.page)
 
-  onPrevClick = () => {
-    let currIdx;
-
-    if (this.state.index - 4 < 0)  currIdx = 0
-    else currIdx = this.state.index - 4
-
-    this.setState({index : currIdx})
-    this.setItems(currIdx)
-  }
-
-  onNextClick = () => {
-    if (this.state.index + 4 < this.state.filteredMap.length) {
-      let currIdx = this.state.index + 4;
-      this.setState({index : currIdx})
-      this.setItems(currIdx)
+    if (meta.hasPrevPage) {
+      await this.setState({ meta : { page : meta.prevPage } });
+      this.getPlaces()
     }
   }
 
-  setItems = (idx) => {
-    let items = []
-    for (let i = idx; i < idx + 4; i++) {
-      if(this.state.filteredMap[i]) items.push(this.state.filteredMap[i]);
+  onNextClick = async () => {
+    let meta = this.state.meta
+    console.log(meta.hasNextPage, meta.page)
+
+    if (meta.hasNextPage) {
+      await this.setState({ meta : { page : meta.nextPage } });
+      this.getPlaces()
     }
-    this.setState({ items : items })
-    this.setSelectedMark(null);
   }
 
   onDetailClick = (selected) => {
@@ -99,13 +83,28 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    this.setItems(0)
+    this.getPlaces()
+  }
+
+  getPlaces() {
+    axios.get(`http://localhost:3001/places?page=${this.state.meta.page}&keyword=${this.state.selectedName}&category=${this.state.selectedCategory}`)
+      .then(res => {
+        this.setState({ 
+          meta : res.data.meta,
+          places : res.data.places,
+          selectedPlace : null
+        })
+      })
+      .catch(err => {
+        console.log("API GET : Error " + err.response);
+      });
   }
 
   render() {
+    let {meta, places} = this.state
     let box = []
 
-    for (const [index, item] of this.state.items.entries()) {
+    for (const [index, item] of places.entries()) {
       box.push(
         <div className="item" key={index}>
           <div className="item-image">
@@ -114,8 +113,8 @@ class Main extends Component {
           <div className="item-body">
             <div className="item-body-title">{item.name}</div>
             <span>
-              Category : { this.capitalize(item.category)} <br />
-              Address : { item.address}
+              Category : { this.capitalize(item.category) } <br />
+              Address : { item.address }
             </span>
           </div>
           <div className="item-footer">
@@ -134,46 +133,45 @@ class Main extends Component {
             defaultZoom={12}
             defaultCenter={{ lat: -6.21462, lng: 106.84513 }}
             >
-            {this.state.items.map(mark => (
+            {places.map(place => (
               <Marker
-                key={mark.id}
+                key={place.id}
                 position={{
-                  lat: mark.coordinate.lat,
-                  lng: mark.coordinate.lng
+                  lat: place.coordinate.lat,
+                  lng: place.coordinate.lng
                 }}
                 onClick={() => {
-                  this.setSelectedMark(mark);
+                  this.setSelectedPlace(place);
                 }}
                 /* 
                 if you want mouse over
                 onMouseOver={() => {
-                  this.setselectedMark(park);
+                  this.setSelectedPlace(park);
                 }} */
               />
             ))}
 
-            {this.state.selectedMark && (
+            {this.state.selectedPlace && (
               <InfoWindow
                 onClose={() => {
-                  this.setSelectedMark(null);
+                  this.setSelectedPlace(null);
                 }}
                 position={{
-                  lat: this.state.selectedMark.coordinate.lat + 0.0150,
-                  lng: this.state.selectedMark.coordinate.lng
+                  lat: this.state.selectedPlace.coordinate.lat + 0.0150,
+                  lng: this.state.selectedPlace.coordinate.lng
                 }}
               >
                 <span style={{ padding: 0, margin: 0 }}>
-                  <h3>{this.state.selectedMark.name}</h3>
+                  <h3>{this.state.selectedPlace.name}</h3>
                   <p>
-                    Category : { this.capitalize(this.state.selectedMark.category) } <br />
-                    { this.state.selectedMark.address}
+                    Category : { this.capitalize(this.state.selectedPlace.category) } <br />
+                    { this.state.selectedPlace.address}
                   </p>
                   <div className="info-window-button" >
                     <button className="btn" 
-                      onClick={() => this.onDetailClick(this.state.selectedMark)}
+                      onClick={() => this.onDetailClick(this.state.selectedPlace)}
                     >Detail</button>
                   </div>
-                  
                 </span>
               </InfoWindow>
             )}
@@ -205,12 +203,17 @@ class Main extends Component {
           <div className="left-container">
 
             <div className="content-map">
-              {box}
+              { box }
             </div>
 
             <div className="pagination">
-              <button className="btn" onClick={this.onPrevClick}>Prev</button>
-              <button className="btn" onClick={this.onNextClick}>Next</button>
+              <span>
+                page {meta.page} of {meta.totalPages}
+              </span>
+              <div>
+                <button className="btn" onClick={this.onPrevClick}>Prev</button>
+                <button className="btn" onClick={this.onNextClick}>Next</button>
+              </div>
             </div>
 
           </div>
