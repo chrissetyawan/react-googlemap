@@ -7,7 +7,7 @@ MongoDB, Express js, React js, Node js
 
 ```bash
 create mongo database with name "gmapCrud"
-restore dump file with command "mongorestore --gzip --archive=/path/to/gmapCrud.archive"
+restore dump file with "mongorestore --gzip --archive=/path/to/gmapCrud.archive"
 
 npm install
 npm start
