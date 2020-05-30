@@ -76,7 +76,7 @@ Detail Page
 
 CRUD Page
 
-<a href="https://ibb.co/SRDv24Y"><img src="https://i.ibb.co/ZWRT3p4/crudpage.png" alt="crudpage" border="0"></a>
+<a href="https://ibb.co/xhH8jjQ"><img src="https://i.ibb.co/dBgJ22y/crudpage.png" alt="crudpage" border="0"></a>
 
 
 
