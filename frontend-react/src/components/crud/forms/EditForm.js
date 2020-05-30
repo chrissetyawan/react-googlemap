@@ -29,7 +29,7 @@ const EditForm = props => {
     let tempErrors = {};
     let formIsValid = true;
 
-    if(!place.name){
+    if(!place.name || place.name.trim() ===  ""){
        formIsValid = false;
        tempErrors["name"] = "Cannot be empty";
     }
@@ -39,36 +39,90 @@ const EditForm = props => {
        tempErrors["category"] = "Not selected yet";
     }
 
-    if(!place.description){
+    if(!place.description || place.description.trim() ===  ""){
       formIsValid = false;
       tempErrors["description"] = "Cannot be empty";
     }
 
-    if(!place.address){
+    if(!place.address || place.address.trim() ===  ""){
       formIsValid = false;
       tempErrors["address"] = "Cannot be empty";
     }
 
     if(!place.coordinate.lat || place.coordinate.lat === 0){
       formIsValid = false;
-      tempErrors["lat"] = "Cannot have zero value or empty";
+      tempErrors["lat"] = "Cannot have zero or empty value";
     }
 
     if(!place.coordinate.lng || place.coordinate.lng === 0){
       formIsValid = false;
-      tempErrors["lng"] = "Cannot have zero value or empty";
+      tempErrors["lng"] = "Cannot have zero or empty value";
     }
 
-    if(place.facilities.length === 0){
-      formIsValid = false;
-      tempErrors["facilities"] = "Cannot be empty";
-    }
+    if (Array.isArray(place.facilities)) {
+			if (place.facilities.length === 0) {
+				formIsValid = false;
+				tempErrors["facilities"] = "Input not valid";
+			}
+			else {
+				for (const [index, facility] of place.facilities.entries()) {
+					if (facility.trim() === "") {
+						formIsValid = false;
+						tempErrors["facilities"] = "Input not valid";
+						break;
+					}
+				}
+			}
+		}
+		else {
+			if (place.facilities.trim() ===  "") {
+				formIsValid = false;
+				tempErrors["facilities"] = "Cannot be empty";
+			}
+			else {
+				let arr = place.facilities.split(",")
+				for (const [index, facility] of arr.entries()) {
+					if (facility.trim() === "") {
+						formIsValid = false;
+						tempErrors["facilities"] = "Input not valid";
+						break;
+					}
+				}
+			}
+		}
+			
+		if (Array.isArray(place.images)) {
+			if (place.images.length === 0) {
+				formIsValid = false;
+				tempErrors["images"] = "Input not valid";
+			}
+			else {
+				for (const [index, image] of place.images.entries()) {
+					if (image.trim() === "") {
+						formIsValid = false;
+						tempErrors["images"] = "Input not valid";
+						break;
+					}
+				}
+			}
+		}
+		else {
+			if (place.images.trim() ===  "") {
+				formIsValid = false;
+				tempErrors["images"] = "Cannot be empty";
+			}
+			else {
+				let arr = place.images.split(",")
+				for (const [index, image] of arr.entries()) {
+					if (image.trim() === "") {
+						formIsValid = false;
+						tempErrors["images"] = "Input not valid";
+						break;
+					}
+				}
+			}
+		}
 
-    if(place.images.length === 0){
-      formIsValid = false;
-      tempErrors["images"] = "Cannot be empty";
-    }
-      
     setErrors(tempErrors);
     return formIsValid;
   }

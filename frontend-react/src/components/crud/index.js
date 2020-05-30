@@ -97,10 +97,12 @@ const crud = () => {
 		// formating input data
 		const formatedInput = formatingInput(place)
 
-		API.post(`places`, place)
-		  .then(res => {
-			formatedInput.id = res.data.id
-			setPlaces([ ...places, formatedInput ])
+		API.post(`places`, formatedInput)
+		  .then(async res => {
+
+			meta.page = 1
+			await setMeta(meta);
+			getPlaces()
 
 			ButterToast.raise({
 				content: <Cinnamon.Crunch title="Success message"
@@ -141,8 +143,11 @@ const crud = () => {
 			setEditing(false)
 
 			API.delete(`places/${id}`)
-			.then(res => {
-				setPlaces(places.filter(place => place.id !== id))
+			.then(async res => {
+
+				meta.page = 1
+				await setMeta(meta);
+				getPlaces()
 
 				ButterToast.raise({
 					content: <Cinnamon.Crunch title="Success message"
@@ -182,12 +187,12 @@ const crud = () => {
 		if (!Array.isArray(input.images))
 			input.images = input.images.split(",")
 		
-		for (const [index, item] of input.facilities.entries()) {
-			input.facilities[index] = item.trim().replace("\n","").replace(/'/g,"").replace(/"/g,"")
+		for (const [index, facility] of input.facilities.entries()) {
+			input.facilities[index] = facility.trim().replace("\n","").replace(/'/g,"").replace(/"/g,"")
 		}
 
-		for (const [index, item] of input.images.entries()) {
-			input.images[index] = item.trim().replace("\n","").replace(/'/g,"").replace(/"/g,"")
+		for (const [index, image] of input.images.entries()) {
+			input.images[index] = image.trim().replace("\n","").replace(/'/g,"").replace(/"/g,"")
 		}
 
 		return input
