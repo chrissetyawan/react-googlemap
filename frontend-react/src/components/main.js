@@ -86,7 +86,7 @@ class Main extends Component {
   }
 
   getPlaces() {
-    API.get(`places?page=${this.state.meta.page}&keyword=${this.state.selectedName}&category=${this.state.selectedCategory}`)
+    API.get(`places?page=${this.state.meta.page}&limit=4&keyword=${this.state.selectedName}&category=${this.state.selectedCategory}`)
       .then(res => {
         this.setState({ 
           meta : res.data.meta,
@@ -193,7 +193,6 @@ class Main extends Component {
                   <option value="apartment">Apartment</option>
                   <option value="office">Office</option>
                </select>
-               <p></p>
            </div>
 
            <span><Link to="/crud" >Go to CRUD</Link></span>

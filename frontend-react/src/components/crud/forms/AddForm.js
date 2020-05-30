@@ -142,7 +142,7 @@ const AddForm = props => {
 			<span style={{color: "red"}}>{errors["images"]}</span>
 
 			<br />
-			<button className="btn" style={{width:'80px', height:'34px', marginTop:'20px'}} >Add new</button>
+			<button className="btn" style={{width:'80px', height:'34px', marginTop:'20px'}} >Add New</button>
 		</form>
 	)
 }

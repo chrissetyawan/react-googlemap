@@ -51,6 +51,7 @@ code {
   background-repeat: no-repeat;
   border-radius: 15px;
   margin-left: 23px;
+  margin-right: 25px;
 }
 
 .header-container > div > input:focus {
@@ -58,8 +59,9 @@ code {
 }
 
 .header-container > div > select {
-  padding: 6px 10px;
+  padding: 8px 10px;
   border: 1px solid #aaa9ad ;
+  width: 150px;
 }
 
 .body-container {
@@ -155,10 +157,14 @@ code {
   color: white;
   padding: 5px;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   border: none;
   text-decoration: none;
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .data-empty {

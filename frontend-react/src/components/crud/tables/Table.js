@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Table = props => (
+  
   <table>
     <thead>
       <tr>
@@ -13,15 +14,15 @@ const Table = props => (
       {props.places.length > 0 ? (
         props.places.map((place, index) => (
           <tr key={index}>
-            <td>{place.name}</td>
-            <td>{place.category.charAt(0).toUpperCase() + place.category.slice(1)}</td>
-            <td>
+            <td style={{flex:'1'}}>{place.name}</td>
+            <td style={{width:'150px'}}>{place.category.charAt(0).toUpperCase() + place.category.slice(1)}</td>
+            <td style={{width:'180px'}}>
               <button
                 onClick={() => {
                   props.editRow(place)
                 }}
                 className="btn"
-                style={{width:'80px', marginRight:'10px', marginBottom:'10px'}}
+                style={{width:'80px', marginRight:'10px'}}
               >
                 Edit
               </button>

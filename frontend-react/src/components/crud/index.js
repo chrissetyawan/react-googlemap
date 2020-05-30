@@ -28,6 +28,69 @@ const crud = () => {
 	const [ places, setPlaces ] = useState(placesData)
 	const [ currentPlace, setCurrentPlace ] = useState(initialFormState)
 	const [ editing, setEditing ] = useState(false)
+	const [ meta, setMeta ] = useState({
+		page: 1,
+        hasPrevPage: false,
+        hasNextPage: true,
+        prevPage: null,
+		nextPage: 2,
+		totalPages: 0
+	})
+	let [ category, setCategory ] = useState("all")
+	let [ name, setName ] = useState("")
+
+	// Pagination
+	const nameChange = async (event) => {
+		const {value} = event.target
+		meta.page = 1
+		await setMeta(meta);
+		name = value
+		await setName(value)
+		getPlaces()
+	}
+
+	const categoryChange = async (event) => {
+		const {value} = event.target
+		meta.page = 1
+		await setMeta(meta);
+		category = value
+		await setCategory(value)
+		getPlaces()
+	}
+
+	const onFirstClick = async () => {
+		if (meta.page !== 1) {
+			meta.page = 1
+			await setMeta(meta);
+			getPlaces()
+		}
+	}
+	
+	const onLastClick = async () => {
+		
+		if (meta.page !== meta.totalPages) {
+			meta.page = meta.totalPages
+			await setMeta(meta);
+			getPlaces()
+		}
+	}
+
+	const onPrevClick = async () => {
+		if (meta.hasPrevPage) {
+			meta.page = meta.prevPage
+			await setMeta(meta);
+			getPlaces()
+		}
+	}
+	
+	const onNextClick = async () => {
+		
+		if (meta.hasNextPage) {
+			meta.page = meta.nextPage
+			await setMeta(meta);
+			getPlaces()
+		}
+	}
 
 	// CRUD operations
 	const addPlace = place => {
@@ -92,7 +155,6 @@ const crud = () => {
 				console.log("API Error :  " + err.response);
 			});
 		}
-		
 	}
 
 	const editRow = place => {
@@ -131,6 +193,7 @@ const crud = () => {
 		return input
 	}
 
+	// get data
 	useEffect(
 		() => {
 		  getPlaces()
@@ -139,9 +202,10 @@ const crud = () => {
 	)
 
 	const getPlaces = () => {
-		API.get(`places/list`)
-		  .then(res => {
-			setPlaces(res.data)
+		API.get(`places?page=${meta.page}&limit=10&keyword=${name}&category=${category}`)
+		.then(res => {
+			setPlaces(res.data.places)
+			setMeta(res.data.meta)
 		  })
 		  .catch(err => {
 			console.log("API Error : " + err.response);
@@ -178,7 +242,34 @@ const crud = () => {
 				</div>
 				<div className="flex-large">
 					<h2>List maps</h2>
-					<Table places={places} editRow={editRow} deletePlace={deletePlace} />
+					<div className="table-header" >
+						<div className="table-filter" >
+							<div>
+								<input type="text" value={name} onChange={nameChange} placeholder="Search..." />
+							</div>
+							<div>
+								<select name="category" onChange={categoryChange} >
+									<option value="all">All</option>
+									<option value="apartment">Apartment</option>
+									<option value="office">Office</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div className="table-container">
+						<Table places={places} editRow={editRow} deletePlace={deletePlace} />
+					</div>
+					<div className="table-pagination">
+						<span>
+							page {meta.page} of {meta.totalPages}
+						</span>
+						<div>
+							<button className="btn" onClick={onFirstClick}> First </button>
+							<button className="btn" onClick={onPrevClick}> Prev </button>
+							<button className="btn" onClick={onNextClick}> Next </button>
+							<button className="btn" onClick={onLastClick}> Last </button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

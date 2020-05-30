@@ -27,7 +27,7 @@ exports.findAll =  (req, res) => {
 
 // Retrieve data with pagination
 exports.findPagination = async (req, res) => {
-    const { page = 1, keyword = "", category = "all" } = req.query;
+    const { page = 1, limit = 4, keyword = "", category = "all" } = req.query;
     // console.log(req.query)
 
     let query = {}
@@ -36,12 +36,12 @@ exports.findPagination = async (req, res) => {
         
         if (keyword.trim() !== "") {
             query = {
-                $and: [ { category : category } , { name: new RegExp(`^${keyword}+`, "i") } ]
+                $and: [ { category : category } , { name: new RegExp(`${keyword}+`, "i") } ]
             }
         }
     }
     else if (keyword.trim() !== "") {
-        query = { name: new RegExp(`^${keyword}+`, "i") }
+        query = { name: new RegExp(`${keyword}+`, "i") }
     }
 
     const paginated = await Place.paginate(
@@ -49,7 +49,7 @@ exports.findPagination = async (req, res) => {
         {
             select: 'name category description address city coordinate facilities images',
             page,
-            limit : 4,
+            limit,
             lean: true,
             sort: { updatedAt: "desc" }
         }

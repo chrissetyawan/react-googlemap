@@ -232,3 +232,69 @@
     }
   }
   
+  .table-container {
+    height: 500px;
+  }
+
+  .table-header {
+    display : flex;
+    align-items: center;
+  }
+
+  .table-filter {
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .table-filter > div > input {
+    padding: 7px 10px;
+    padding-left: 35px;
+    border: 1px solid #aaa9ad ;
+    background-image: url("/search-icon.png");
+    background-size: 20px;
+    background-position: 7px 5px;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+  }
+
+  .table-filter > div > select {
+    padding: 8px 10px;
+    border: 1px solid #aaa9ad ;
+    width: 150px;
+  }
+
+  td {
+    line-height: 30px;
+  }
+
+  .table-pagination {
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .table-pagination > span {
+    flex: 1;
+    font-size: 12px;
+    text-align: right;
+    margin-right: 20px;
+  }
+  .table-pagination > div  {
+    width: 340px;
+    text-align: center;
+  }
+  .table-pagination > div > .btn {
+    width: 70px;
+    border-radius: 15px;
+    margin-right: 10px;
+  }
+  .table-pagination > div > .btn:first-child {
+    
+  }
+ 
+
