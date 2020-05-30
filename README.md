@@ -78,6 +78,5 @@ CRUD Page
 Todo : 
 - Responsive Layout
 - Implement redux/context on frontend
-- Pagination on CRUD page
 
 
