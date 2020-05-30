@@ -58,7 +58,7 @@ Open Browser with Url: http://localhost:3000/
 
 Main Page
 
-<a href="https://ibb.co/Jcb9wbX"><img src="https://i.ibb.co/FhfFLfG/mainpage.png" alt="mainpage" border="0"></a>
+<a href="https://ibb.co/WVH1G97"><img src="https://i.ibb.co/XYWTjB6/mainpage.png" alt="mainpage" border="0"></a>
 
 
 
