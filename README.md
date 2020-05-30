@@ -58,16 +58,19 @@ Open Browser with Url: http://localhost:3000/
 
 Main Page
 
-![Screenshoot](mainPage.png)
+![Screenshoot](https://ibb.co/Jcb9wbX)
 
 
 
 Detail Page
 
-![Screenshoot](detailPage.png)
+![Screenshoot](https://ibb.co/M7Zybpc)
 
+CRUD Page
+
+![Screenshoot](https://ibb.co/4Ky2NcS)
 
 
 Todo : 
 - Responsive Layout
-- Implement redux/context on react
+- Implement redux/context on frontend
