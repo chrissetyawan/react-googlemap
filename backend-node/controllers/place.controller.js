@@ -93,11 +93,11 @@ exports.create = (req, res) => {
 
     // Create an Place
     const place = new Place({
-        name: req.body.name,
-        category: req.body.category,
-        description: req.body.description,
-        address: req.body.address,
-        city: req.body.city,
+        name: req.body.name.trim(),
+        category: req.body.category.trim(),
+        description: req.body.description.trim(),
+        address: req.body.address.trim(),
+        city: req.body.city.trim(),
         coordinate: req.body.coordinate,
         facilities: req.body.facilities,
         images :req.body.images
@@ -125,11 +125,11 @@ exports.update = (req, res) => {
 
     // Find place and update it with the request body
     Place.findByIdAndUpdate(req.params.id, {
-        name: req.body.name,
-        category: req.body.category,
-        description: req.body.description,
-        address: req.body.address,
-        city: req.body.city,
+        name: req.body.name.trim(),
+        category: req.body.category.trim(),
+        description: req.body.description.trim(),
+        address: req.body.address.trim(),
+        city: req.body.city.trim(),
         coordinate: req.body.coordinate,
         facilities: req.body.facilities,
         images :req.body.images

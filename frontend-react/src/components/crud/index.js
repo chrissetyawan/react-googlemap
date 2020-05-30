@@ -31,16 +31,39 @@ const crud = () => {
 
 	// CRUD operations
 	const addPlace = place => {
-		place.facilities = place.facilities.trim().split(",")
-		place.images = place.images.trim().split(",")
+		// formating input data
+		const formatedInput = formatingInput(place)
+
 		API.post(`places`, place)
 		  .then(res => {
-			place.id = res.data.id
-			setPlaces([ ...places, place ])
+			formatedInput.id = res.data.id
+			setPlaces([ ...places, formatedInput ])
 
 			ButterToast.raise({
 				content: <Cinnamon.Crunch title="Success message"
 					content="Data succsefully added"
+					scheme={Cinnamon.Crunch.SCHEME_GREEN}
+				/>
+			})
+		  })
+		  .catch(err => {
+			console.log("API Error :  " + err.response);
+		  });
+	}
+
+	const updatePlace = (id, updatedPlace) => {
+		setEditing(false)
+
+		// formating input data
+		const formatedInput = formatingInput(updatedPlace)
+
+		API.put(`places/${id}`, formatedInput)
+		  .then(res => {
+			setPlaces(places.map(place => (place.id === id ? formatedInput : place)))
+
+			ButterToast.raise({
+				content: <Cinnamon.Crunch title="Success message"
+					content="Data succsefully updated"
 					scheme={Cinnamon.Crunch.SCHEME_GREEN}
 				/>
 			})
@@ -72,24 +95,6 @@ const crud = () => {
 		
 	}
 
-	const updatePlace = (id, updatedPlace) => {
-		setEditing(false)
-		API.put(`places/${id}`, updatedPlace)
-		  .then(res => {
-			setPlaces(places.map(place => (place.id === id ? updatedPlace : place)))
-
-			ButterToast.raise({
-				content: <Cinnamon.Crunch title="Success message"
-					content="Data succsefully updated"
-					scheme={Cinnamon.Crunch.SCHEME_GREEN}
-				/>
-			})
-		  })
-		  .catch(err => {
-			console.log("API Error :  " + err.response);
-		  });
-	}
-
 	const editRow = place => {
 		setEditing(true)
 		setCurrentPlace({ 
@@ -108,12 +113,30 @@ const crud = () => {
 		})
 	}
 
+	const formatingInput = (input) => {
+		if (!Array.isArray(input.facilities))
+			input.facilities = input.facilities.split(",")
+
+		if (!Array.isArray(input.images))
+			input.images = input.images.split(",")
+		
+		for (const [index, item] of input.facilities.entries()) {
+			input.facilities[index] = item.trim().replace("\n","").replace(/'/g,"").replace(/"/g,"")
+		}
+
+		for (const [index, item] of input.images.entries()) {
+			input.images[index] = item.trim().replace("\n","").replace(/'/g,"").replace(/"/g,"")
+		}
+
+		return input
+	}
+
 	useEffect(
 		() => {
 		  getPlaces()
 		},
 		[]
-	  )
+	)
 
 	const getPlaces = () => {
 		API.get(`places/list`)
