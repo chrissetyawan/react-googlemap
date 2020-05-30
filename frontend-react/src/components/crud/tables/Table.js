@@ -21,14 +21,14 @@ const Table = props => (
                 onClick={() => {
                   props.editRow(place)
                 }}
-                className="btn"
+                className="btn btn-table"
                 style={{width:'80px', marginRight:'10px'}}
               >
                 Edit
               </button>
               <button
                 onClick={() => props.deletePlace(place.id)}
-                className="btn"
+                className="btn btn-table"
                 style={{width:'80px'}}
               >
                 Delete

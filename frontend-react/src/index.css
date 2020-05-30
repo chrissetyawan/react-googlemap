@@ -159,12 +159,16 @@ code {
   text-align: center;
   font-size: 13px;
   cursor: pointer;
-  border: none;
   text-decoration: none;
+  border: none;
 }
 
 .btn:focus {
   outline: none;
+}
+
+.btn:hover {
+  font-weight: 600;
 }
 
 .data-empty {

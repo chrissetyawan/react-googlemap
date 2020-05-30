@@ -57,14 +57,14 @@ const AddForm = props => {
 			tempErrors["address"] = "Cannot be empty";
 		}
 
-		if(!place.coordinate.lat || place.coordinate.lat === 0) {
+		if(!place.coordinate.lat || parseInt(place.coordinate.lat) === 0) {
 			formIsValid = false;
-			tempErrors["lat"] = "Cannot have zero value or empty";
+			tempErrors["lat"] = "Cannot be zero or empty ";
 		}
 
-		if(!place.coordinate.lng || place.coordinate.lng === 0) {
+		if(!place.coordinate.lng || parseInt(place.coordinate.lng) === 0) {
 			formIsValid = false;
-			tempErrors["lng"] = "Cannot have zero value or empty";
+			tempErrors["lng"] = "Cannot be zero or empty";
 		}
 
 		if (Array.isArray(place.facilities)) {

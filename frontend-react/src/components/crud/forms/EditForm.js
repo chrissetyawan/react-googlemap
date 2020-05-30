@@ -49,15 +49,15 @@ const EditForm = props => {
       tempErrors["address"] = "Cannot be empty";
     }
 
-    if(!place.coordinate.lat || place.coordinate.lat === 0){
-      formIsValid = false;
-      tempErrors["lat"] = "Cannot have zero or empty value";
-    }
+    if(!place.coordinate.lat || parseInt(place.coordinate.lat) === 0) {
+		formIsValid = false;
+		tempErrors["lat"] = "Cannot be zero or empty ";
+	}
 
-    if(!place.coordinate.lng || place.coordinate.lng === 0){
-      formIsValid = false;
-      tempErrors["lng"] = "Cannot have zero or empty value";
-    }
+	if(!place.coordinate.lng || parseInt(place.coordinate.lng) === 0) {
+		formIsValid = false;
+		tempErrors["lng"] = "Cannot be zero or empty";
+	}
 
     if (Array.isArray(place.facilities)) {
 			if (place.facilities.length === 0) {
