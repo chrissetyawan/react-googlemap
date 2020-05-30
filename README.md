@@ -70,4 +70,4 @@ Detail Page
 
 Todo : 
 - Responsive Layout
-- Implement CRUD on frontend
+- Implement redux/context on react
