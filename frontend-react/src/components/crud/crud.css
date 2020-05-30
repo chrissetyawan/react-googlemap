@@ -233,7 +233,7 @@
   }
   
   .table-container {
-    height: 500px;
+    height: 520px;
   }
 
   .table-header {
@@ -275,7 +275,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .table-pagination > span {
