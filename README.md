@@ -58,17 +58,16 @@ Open Browser with Url: http://localhost:3000/
 
 Main Page
 
-![Screenshoot](https://ibb.co/Jcb9wbX)
-
+<a href="https://ibb.co/Jcb9wbX"><img src="https://i.ibb.co/FhfFLfG/mainpage.png" alt="mainpage" border="0" /></a>
 
 
 Detail Page
 
-![Screenshoot](https://ibb.co/M7Zybpc)
+<a href="https://ibb.co/M7Zybpc"><img src="https://i.ibb.co/bXQjxLs/detailpage.png" alt="detailpage" border="0" /></a>
 
 CRUD Page
 
-![Screenshoot](https://ibb.co/4Ky2NcS)
+<a href="https://ibb.co/4Ky2NcS"><img src="https://i.ibb.co/pbDQXgK/crudpage.png" alt="crudpage" border="0" /></a>
 
 
 Todo : 
