@@ -6,13 +6,18 @@ MongoDB, Express js, React js, Node js
 ## Backend Node
 
 ```bash
-create mongo database with name "gmapCrud"
-restore dump file with "mongorestore --gzip --archive=/path/to/gmapCrud.archive"
+
+update database config on \config\database.config.js
 
 npm install
 npm start
 
 backend will run on port 3001
+
+
+optional : 
+create mongo database with name "gmapCrud"
+restore dump file with "mongorestore --gzip --archive=/path/to/gmapCrud.archive"
 
 ```
 
