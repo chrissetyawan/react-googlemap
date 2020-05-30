@@ -34,6 +34,7 @@ Open Browser with Url: http://localhost:3000/
 
 ```
   get      /places?page=1&name=park&category=apartment     get map list with filtering and pagination
+  get      /places/list              get map list
   get      /places/5                 get a map
   post     /places/                  create a map
   put      /places/5                 update a map
