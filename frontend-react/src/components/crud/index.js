@@ -87,7 +87,7 @@ const crud = () => {
 			images : place.images
 		})
 	}
-
+	
 	useEffect(
 		() => {
 		  getPlaces()
@@ -112,7 +112,7 @@ const crud = () => {
 		<div className="container">
 			<div className="header-container">
 				<div>
-					<h2>CRUD App with Hooks</h2>
+					<h2>CRUD with Hooks</h2>
 				</div>
 				<span><Link to="/" >Go to Map</Link></span>
 			</div>

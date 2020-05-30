@@ -188,7 +188,7 @@ class Main extends Component {
             </div>
 
             <div>
-               <select id="lang" onChange={this.onDropdownChange} >
+               <select name="category" onChange={this.onDropdownChange} >
                   <option value="all">All</option>
                   <option value="apartment">Apartment</option>
                   <option value="office">Office</option>

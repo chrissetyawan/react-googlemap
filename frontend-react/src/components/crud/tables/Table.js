@@ -14,7 +14,7 @@ const Table = props => (
         props.places.map((place, index) => (
           <tr key={index}>
             <td>{place.name}</td>
-            <td>{place.category}</td>
+            <td>{place.category.charAt(0).toUpperCase() + place.category.slice(1)}</td>
             <td>
               <button
                 onClick={() => {
