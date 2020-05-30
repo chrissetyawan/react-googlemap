@@ -40,10 +40,6 @@ code {
   margin-top: 8px;
 }
 
-.header-container > div:first-child {
-  
-}
-
 .header-container > div > input {
   width: 250px;
   padding: 7px 10px;
@@ -69,6 +65,7 @@ code {
 .body-container {
   display : flex;
   flex-direction: row;
+  height: 91.7vh;
 }
 
 .left-container {
@@ -81,18 +78,19 @@ code {
 .right-container {
   width: 60%;
   max-width: 60%;
-  height: 91.7vh;
+  /* height: 91.7vh; */
   margin: 0px;
 }
 
 .box-container {
   display: flex;
   flex-wrap: wrap;
-  height: 80vh;
+  flex: 1;
 }
 .pagination {
   display: flex;
   align-items: center;
+  margin: 5px 0px 20px 0px;
 }
 
 .pagination > span {
@@ -134,7 +132,7 @@ code {
   overflow-y: auto;
   word-wrap: break-word;
   padding: 5px 10px;
-  height: 90px;
+  flex: 1;
 }
 
 .item-body-title {

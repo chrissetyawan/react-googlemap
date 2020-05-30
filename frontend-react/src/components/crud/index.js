@@ -126,8 +126,8 @@ const crud = () => {
 	}
 
 	return (
-		<div className="container">
-			<div className="header-container">
+		<div className="crud-container">
+			<div className="crud-header-container">
 				<div>
 					<h2>CRUD with Hooks</h2>
 				</div>

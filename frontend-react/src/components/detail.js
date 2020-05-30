@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './detail.module.css';
+import { Link } from "react-router-dom";
 
 import {
   withGoogleMap,
@@ -75,7 +76,9 @@ class Detail extends Component {
 
         return (
             <div className={styles.detailContainer}>
-                <div style={{ height: 30 }}></div>
+                <div className={styles.detailNav}>
+                  <span><Link to="/" >Back</Link></span>
+                </div>
                 
                 <div className={styles.detailHeader}>
                     <img src={data.images[0]} className={styles.detailImage} alt="Logo" />
