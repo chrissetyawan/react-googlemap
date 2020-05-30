@@ -38,7 +38,7 @@ Open Browser with Url: http://localhost:3000/
 ## Rest API design
 
 ```
-  get      /places?page=1&name=park&category=apartment     get map list with filtering and pagination
+  get      /places?page=1&limit=4&name=park&category=apartment     get map list with filtering and pagination
   get      /places/list              get map list
   get      /places/5                 get a map
   post     /places/                  create a map
