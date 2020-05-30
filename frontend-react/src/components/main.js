@@ -95,7 +95,7 @@ class Main extends Component {
         })
       })
       .catch(err => {
-        console.log("API GET : Error " + err.response);
+        console.log("API Error " + err.response);
       });
   }
 

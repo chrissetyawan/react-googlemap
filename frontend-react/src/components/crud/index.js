@@ -5,6 +5,7 @@ import EditForm from './forms/EditForm'
 import Table from './tables/Table'
 import './crud.css';
 import API from "../../utils/api"
+import ButterToast, { Cinnamon } from "butter-toast";
 
 const crud = () => {
 	const placesData = []
@@ -34,27 +35,40 @@ const crud = () => {
 		place.images = place.images.trim().split(",")
 		API.post(`places`, place)
 		  .then(res => {
-			// console.log(res.data)
 			place.id = res.data.id
 			setPlaces([ ...places, place ])
+
+			ButterToast.raise({
+				content: <Cinnamon.Crunch title="Success message"
+					content="Data succsefully added"
+					scheme={Cinnamon.Crunch.SCHEME_GREEN}
+				/>
+			})
 		  })
 		  .catch(err => {
-			console.log("API GET : Error " + err.response);
+			console.log("API Error :  " + err.response);
 		  });
 	}
 
 	const deletePlace = id => {
-		setEditing(false)
+		if (window.confirm('Are you sure to delete this record?')) {
+			setEditing(false)
 
-		API.delete(`places/${id}`)
-		  .then(res => {
-			console.log(res.data)
-			setPlaces(places.filter(place => place.id !== id))
-		  })
-		  .catch(err => {
-			console.log("API GET : Error " + err.response);
-		  });
+			API.delete(`places/${id}`)
+			.then(res => {
+				setPlaces(places.filter(place => place.id !== id))
 
+				ButterToast.raise({
+					content: <Cinnamon.Crunch title="Success message"
+						content="Data succsefully deleted"
+						scheme={Cinnamon.Crunch.SCHEME_GREEN}
+					/>
+				})
+			})
+			.catch(err => {
+				console.log("API Error :  " + err.response);
+			});
+		}
 		
 	}
 
@@ -62,11 +76,17 @@ const crud = () => {
 		setEditing(false)
 		API.put(`places/${id}`, updatedPlace)
 		  .then(res => {
-			console.log(res.data)
 			setPlaces(places.map(place => (place.id === id ? updatedPlace : place)))
+
+			ButterToast.raise({
+				content: <Cinnamon.Crunch title="Success message"
+					content="Data succsefully updated"
+					scheme={Cinnamon.Crunch.SCHEME_GREEN}
+				/>
+			})
 		  })
 		  .catch(err => {
-			console.log("API GET : Error " + err.response);
+			console.log("API Error :  " + err.response);
 		  });
 	}
 
@@ -87,7 +107,7 @@ const crud = () => {
 			images : place.images
 		})
 	}
-	
+
 	useEffect(
 		() => {
 		  getPlaces()
@@ -98,13 +118,10 @@ const crud = () => {
 	const getPlaces = () => {
 		API.get(`places/list`)
 		  .then(res => {
-			console.log(res.data)
-			
 			setPlaces(res.data)
-			
 		  })
 		  .catch(err => {
-			console.log("API GET : Error " + err.response);
+			console.log("API Error : " + err.response);
 		  });
 	}
 
@@ -121,7 +138,7 @@ const crud = () => {
 				<div className="flex-large one-fourth">
 					{editing ? (
 						<Fragment>
-							<h2>Edit place</h2>
+							<h2>Edit map</h2>
 							<EditForm
 								editing={editing}
 								setEditing={setEditing}
@@ -131,13 +148,13 @@ const crud = () => {
 						</Fragment>
 					) : (
 						<Fragment>
-							<h2>Add place</h2>
+							<h2>Add map</h2>
 							<AddForm addPlace={addPlace} />
 						</Fragment>
 					)}
 				</div>
 				<div className="flex-large">
-					<h2>View places</h2>
+					<h2>List maps</h2>
 					<Table places={places} editRow={editRow} deletePlace={deletePlace} />
 				</div>
 			</div>

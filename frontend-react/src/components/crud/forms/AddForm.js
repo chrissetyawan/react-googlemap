@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ButterToast, { Cinnamon } from "butter-toast";
 
 const AddForm = props => {
 	const initialFormState = { 
@@ -43,7 +44,7 @@ const AddForm = props => {
 
         if(!place.category){
            formIsValid = false;
-           tempErrors["category"] = "Cannot be empty";
+           tempErrors["category"] = "Not selected yet";
 		}
 		
 		if(!place.description){
@@ -86,8 +87,14 @@ const AddForm = props => {
         if(handleValidation()){
            props.addPlace(place)
 		   setPlace(initialFormState)
+		   
         }else{
-           alert("Form has errors.")
+		    ButterToast.raise({
+				content: <Cinnamon.Crunch title="Error message"
+					content="Failed validation"
+					scheme={Cinnamon.Crunch.SCHEME_RED}
+				/>
+			})
         }
     }
 

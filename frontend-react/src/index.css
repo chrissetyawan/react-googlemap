@@ -37,10 +37,11 @@ code {
   display : flex;
   align-items: center;
   margin-right: 10px;
+  margin-top: 8px;
 }
 
 .header-container > div:first-child {
-  margin-left: 50px;
+  
 }
 
 .header-container > div > input {
@@ -53,6 +54,7 @@ code {
   background-position: 7px 5px;
   background-repeat: no-repeat;
   border-radius: 15px;
+  margin-left: 23px;
 }
 
 .header-container > div > input:focus {

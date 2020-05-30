@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ButterToast, { Cinnamon } from "butter-toast";
 
 const EditForm = props => {
   const [ place, setPlace ] = useState(props.currentPlace)
@@ -36,7 +37,7 @@ const EditForm = props => {
 
     if(!place.category){
        formIsValid = false;
-       tempErrors["category"] = "Cannot be empty";
+       tempErrors["category"] = "Not selected yet";
     }
 
     if(!place.description){
@@ -79,7 +80,12 @@ const EditForm = props => {
       if(handleValidation()){
         props.updatePlace(place.id, place)
       }else{
-        alert("Form has errors.")
+        ButterToast.raise({
+          content: <Cinnamon.Crunch title="Error message"
+            content="Failed validation"
+            scheme={Cinnamon.Crunch.SCHEME_RED}
+          />
+        })
       }
 
   }

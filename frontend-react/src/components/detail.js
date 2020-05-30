@@ -30,15 +30,10 @@ class Detail extends Component {
     getDetail(id) {
       API.get(`places/${id}`)
         .then(res => {
-          console.log(res.data)
-          
-          this.setState({ 
-            data : res.data
-          })
-          
+          this.setState({ data : res.data })
         })
         .catch(err => {
-          console.log("API GET : Error " + err.response);
+          console.log("API Error " + err.response);
         });
     }
 
