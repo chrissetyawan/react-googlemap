@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useState } from "react";
 import PlaceForm from "./form/PlaceForm";
 import { Grid, Paper, withStyles, Typography, AppBar } from '@material-ui/core';
 import { Link } from "react-router-dom";
