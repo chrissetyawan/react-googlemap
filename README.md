@@ -65,32 +65,30 @@ Open Browser with Url: http://localhost:3000/
 I made 2 version of react, react with hooks and react with redux
 
 
-
 Main Page
 
-<a href="https://ibb.co/WVH1G97" target="_blank"><img src="https://i.ibb.co/XYWTjB6/mainpage.png" alt="mainpage" border="0"></a>
+![Screenshoot](https://i.ibb.co/XYWTjB6/mainpage.png)
 
 
 
 
 Detail Page
 
-<a href="https://ibb.co/M7Zybpc" target="_blank"><img src="https://i.ibb.co/bXQjxLs/detailpage.png" alt="detailpage" border="0"></a>
+![Screenshoot](https://i.ibb.co/bXQjxLs/detailpage.png)
 
 
 
 
 CRUD Page with hooks
 
-<a href="https://ibb.co/xhH8jjQ" target="_blank"><img src="https://i.ibb.co/dBgJ22y/crudpage.png" alt="crudpage" border="0"></a>
+![Screenshoot](https://i.ibb.co/dBgJ22y/crudpage.png)
 
 
 
 
 CRUD Page with Redux and Material UI
 
-<a href="https://ibb.co/KKnzF3K" target="_blank"><img src="https://i.ibb.co/QD0jr1D/react-redux.png" alt="react-redux" border="0" /></a>
-
+![Screenshoot](https://i.ibb.co/QD0jr1D/react-redux.png)
 
 
 
