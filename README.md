@@ -61,27 +61,31 @@ Open Browser with Url: http://localhost:3000/
   }
 ```
 
-Main Page
+## Screenshoot
 
+Make 2 version, react with hooks and react with redux
+
+Main Page
 <a href="https://ibb.co/WVH1G97"><img src="https://i.ibb.co/XYWTjB6/mainpage.png" alt="mainpage" border="0"></a>
 
 
 
-
 Detail Page
-
 <a href="https://ibb.co/M7Zybpc"><img src="https://i.ibb.co/bXQjxLs/detailpage.png" alt="detailpage" border="0"></a>
 
 
 
-CRUD Page
+CRUD Page with hooks
+<a href="https://ibb.co/xhH8jjQ"><img src="https://i.ibb.co/dBgJ22y/crudpage.png" alt="crudpage" border="0"></a>
 
+
+
+CRUD Page with Redux and Material UI
 <a href="https://ibb.co/xhH8jjQ"><img src="https://i.ibb.co/dBgJ22y/crudpage.png" alt="crudpage" border="0"></a>
 
 
 
 Todo : 
 - Responsive Layout
-- Implement redux/context on frontend
 
 

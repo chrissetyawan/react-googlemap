@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.main-container {
+  display : flex;
+  flex-direction: column;
+}
+
+.header-container {
+  display : flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid #aaa9ad ;
+}
+
+.header-container > span { 
+  flex-grow: 1;
+  text-align: right;
+  margin-right: 50px;
+}
+
+.header-container > div {
+  display : flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.header-container > div > input {
+  width: 250px;
+  padding: 7px 10px;
+  padding-left: 35px;
+  border: 1px solid #aaa9ad ;
+  background-image: url("/search-icon.png");
+  background-size: 20px;
+  background-position: 7px 5px;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  margin-left: 23px;
+  margin-right: 25px;
+}
+
+.header-container > div > input:focus {
+  outline: none;
+}
+
+.header-container > div > select {
+  padding: 8px 10px;
+  border: 1px solid #aaa9ad ;
+  width: 150px;
+}
+
+.body-container {
+  display : flex;
+  flex-direction: row;
+  height: 91.7vh;
+}
+
+.left-container {
+  display : flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 10px;
+}
+
+.right-container {
+  width: 60%;
+  max-width: 60%;
+  /* height: 91.7vh; */
+  margin: 0px;
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pagination > span {
+  width: 50%;
+  font-size: 12px;
+  text-align: center;
+}
+.pagination > div  {
+  width: 50%;
+  text-align: center;
+}
+.pagination > div > .btn {
+  width: 70px;
+}
+.pagination > div > .btn:first-child {
+  margin-right: 10px;
+}
+.item {
+  display : flex;
+  flex-direction: column;
+  width: 45%;
+  height: 270px;
+  border: 1px solid #aaa9ad ;
+  margin: 10px;
+}
+.item-image {
+  height: 120px;
+} 
+.image-map {
+  text-align: center;
+  height: 120px;
+  max-height: 120px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.item-body {
+  font-size: 14px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  padding: 5px 10px;
+  flex: 1;
+}
+
+.item-body-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.item-footer {
+  text-align: right;
+  padding: 10px ;
+}
+
+.item-footer > .btn {
+  width: 100px;
+}
+
+.btn {
+  background-color: #008CBA;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  font-weight: 600;
+}
+
+.data-empty {
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  margin-right:10px;
+}
+
+.info-window-button {
+  text-align: center;
+}
+
+.info-window-button > .btn {
+  width: 70px;
+}
+
+.slick-slide {
+  box-sizing: border-box;
+}
+
+.slick-slide img {
+  height: 150px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+button.slick-arrow.slick-prev,
+button.slick-arrow.slick-next {
+  background-color: black;
+  height: 35px;
+  width: 36px;
+  padding: 8px;
+}
+
+.slick-prev {
+  left: -45px !important;
+}
+
+.slick-next {
+  right: -45px !important;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.navBar > a {
+  margin-right: 20px;
+}

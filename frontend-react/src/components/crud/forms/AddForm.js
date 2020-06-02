@@ -187,12 +187,12 @@ const AddForm = props => {
 
 			<label>Facilities</label>
 			<textarea rows={5} name="facilities" value={place.facilities} onChange={handleInputChange} 
-				placeholder="Separate by comma, ex: facilities 1, facilities 2, etc" />
+				placeholder="Separated by comma, ex: facilities 1, facilities 2, etc" />
 			<span style={{color: "red"}}>{errors["facilities"]}</span>
 
 			<label>Images</label>
 			<textarea rows={5} name="images" value={place.images} onChange={handleInputChange} 
-				placeholder="Separate by comma, ex: /image1.jpg, /image2.png, etc" />
+				placeholder="Separated by comma, ex: /path/image1.jpg, /path/image2.png, etc" />
 			<span style={{color: "red"}}>{errors["images"]}</span>
 
 			<br />

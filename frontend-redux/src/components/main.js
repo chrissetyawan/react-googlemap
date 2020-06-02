@@ -7,7 +7,7 @@ import {
   InfoWindow
 } from "react-google-maps";
 import { Link } from "react-router-dom";
-import API from "../utils/api"
+import API from "../utils/api.js"
 
 class Main extends Component {
   constructor( props ) {
@@ -27,7 +27,7 @@ class Main extends Component {
     }
   }
 
-  handleNameChange = async (event) => {
+  handleChange = async (event) => {
     await this.setState({ 
       meta : { 
         page : 1, 
@@ -36,7 +36,6 @@ class Main extends Component {
       },
       selectedName: event.target.value 
     });
-   
     this.getPlaces();
   }
 
@@ -87,7 +86,7 @@ class Main extends Component {
   }
 
   getPlaces() {
-    API.get(`places?page=${this.state.meta.page}&limit=4&name=${this.state.selectedName}&category=${this.state.selectedCategory}`)
+    API.place().fetchPagination(this.state.meta.page, 4, this.state.selectedName, this.state.selectedCategory)
       .then(res => {
         this.setState({ 
           meta : res.data.meta,
@@ -185,7 +184,7 @@ class Main extends Component {
 
         <div className="header-container" >
             <div>
-              <input type="text" onChange={this.handleNameChange} placeholder="Search..." />
+              <input type="text" onChange={this.handleChange} placeholder="Search..." />
             </div>
 
             <div>

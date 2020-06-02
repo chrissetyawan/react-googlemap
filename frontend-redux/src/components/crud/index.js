@@ -207,7 +207,7 @@ const crud = () => {
 	)
 
 	const getPlaces = () => {
-		API.get(`places?page=${meta.page}&limit=10&name=${name}&category=${category}`)
+		API.get(`places?page=${meta.page}&limit=10&keyword=${name}&category=${category}`)
 		.then(res => {
 			setPlaces(res.data.places)
 			setMeta(res.data.meta)

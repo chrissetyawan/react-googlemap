@@ -27,27 +27,26 @@ exports.findAll =  (req, res) => {
 
 // Retrieve data with pagination
 exports.findPagination = async (req, res) => {
-    const { page = 1, limit = 4, keyword = "", category = "all" } = req.query;
+    const { page = 1, limit = 4, name = "", category = "all" } = req.query;
     // console.log(req.query)
 
     let query = {}
     if ( category.toLowerCase() !== "all") {
         query =  { category : category }
         
-        if (keyword.trim() !== "") {
+        if (name.trim() !== "") {
             query = {
-                $and: [ { category : category } , { name: new RegExp(`${keyword}+`, "i") } ]
+                $and: [ { category : category } , { name: new RegExp(`${name}+`, "i") } ]
             }
         }
     }
-    else if (keyword.trim() !== "") {
-        query = { name: new RegExp(`${keyword}+`, "i") }
+    else if (name.trim() !== "") {
+        query = { name: new RegExp(`${name}+`, "i") }
     }
 
     const paginated = await Place.paginate(
         query,
         {
-            select: 'name category description address city coordinate facilities images',
             page,
             limit,
             lean: true,
@@ -60,15 +59,15 @@ exports.findPagination = async (req, res) => {
     res.json({ meta, places });
 };
 
-// Find one by ID
 exports.findOne = (req, res) => {
     Place.findById(req.params.id)
-        .then(place => {
-            if(!place) {
+        .then(data => {
+            if(!data) {
                 return res.status(404).send({
                     message: "place not found with id " + req.params.id
                 });
             }
+            const place = placesSerializer(data)
             res.send(place);
         }).catch(err => {
             if(err.kind === 'ObjectId') {
@@ -82,16 +81,13 @@ exports.findOne = (req, res) => {
         });
 };
 
-// create 
 exports.create = (req, res) => {
-    // Validate request
     if(!req.body.name) {
          return res.status(400).send({
              message: "Place name can not be empty"
          });
     }
 
-    // Create an Place
     const place = new Place({
         name: req.body.name.trim(),
         category: req.body.category.trim(),
@@ -103,10 +99,10 @@ exports.create = (req, res) => {
         images :req.body.images
     });
 
-    // Save Place in the database
     place.save()
     .then(data => {
-        res.send(data);
+        const place = placesSerializer(data)
+        res.send(place);
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating the Place."
@@ -114,16 +110,13 @@ exports.create = (req, res) => {
     });
 };
 
-// Update
 exports.update = (req, res) => {
-    // Validate Request
     if(!req.body.name) {
         return res.status(400).send({
             message: "Place name can not be empty"
         });
     }
 
-    // Find place and update it with the request body
     Place.findByIdAndUpdate(req.params.id, {
         name: req.body.name.trim(),
         category: req.body.category.trim(),
@@ -134,12 +127,13 @@ exports.update = (req, res) => {
         facilities: req.body.facilities,
         images :req.body.images
     }, {new: true})
-    .then(place => {
-        if(!place) {
+    .then(data => {
+        if(!data) {
             return res.status(404).send({
                 message: "Place not found with id " + req.params.id
             });
         }
+        const place = placesSerializer(data)
         res.send(place);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
@@ -153,7 +147,6 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete
 exports.delete = (req, res) => {
   Place.findByIdAndRemove(req.params.id)
      .then(place => {

@@ -60,68 +60,68 @@ const EditForm = props => {
 	}
 
     if (Array.isArray(place.facilities)) {
-			if (place.facilities.length === 0) {
-				formIsValid = false;
-				tempErrors["facilities"] = "Input not valid";
-			}
-			else {
-				for (const [index, facility] of place.facilities.entries()) {
-					if (facility.trim() === "") {
-						formIsValid = false;
-						tempErrors["facilities"] = "Input not valid";
-						break;
-					}
-				}
-			}
+		if (place.facilities.length === 0) {
+			formIsValid = false;
+			tempErrors["facilities"] = "Input not valid";
 		}
 		else {
-			if (place.facilities.trim() ===  "") {
-				formIsValid = false;
-				tempErrors["facilities"] = "Cannot be empty";
-			}
-			else {
-				let arr = place.facilities.split(",")
-				for (const [index, facility] of arr.entries()) {
-					if (facility.trim() === "") {
-						formIsValid = false;
-						tempErrors["facilities"] = "Input not valid";
-						break;
-					}
+			for (const [index, facility] of place.facilities.entries()) {
+				if (facility.trim() === "") {
+					formIsValid = false;
+					tempErrors["facilities"] = "Input not valid";
+					break;
 				}
 			}
 		}
-			
-		if (Array.isArray(place.images)) {
-			if (place.images.length === 0) {
-				formIsValid = false;
-				tempErrors["images"] = "Input not valid";
-			}
-			else {
-				for (const [index, image] of place.images.entries()) {
-					if (image.trim() === "") {
-						formIsValid = false;
-						tempErrors["images"] = "Input not valid";
-						break;
-					}
-				}
-			}
+	}
+	else {
+		if (place.facilities.trim() ===  "") {
+			formIsValid = false;
+			tempErrors["facilities"] = "Cannot be empty";
 		}
 		else {
-			if (place.images.trim() ===  "") {
-				formIsValid = false;
-				tempErrors["images"] = "Cannot be empty";
-			}
-			else {
-				let arr = place.images.split(",")
-				for (const [index, image] of arr.entries()) {
-					if (image.trim() === "") {
-						formIsValid = false;
-						tempErrors["images"] = "Input not valid";
-						break;
-					}
+			let arr = place.facilities.split(",")
+			for (const [index, facility] of arr.entries()) {
+				if (facility.trim() === "") {
+					formIsValid = false;
+					tempErrors["facilities"] = "Input not valid";
+					break;
 				}
 			}
 		}
+	}
+		
+	if (Array.isArray(place.images)) {
+		if (place.images.length === 0) {
+			formIsValid = false;
+			tempErrors["images"] = "Input not valid";
+		}
+		else {
+			for (const [index, image] of place.images.entries()) {
+				if (image.trim() === "") {
+					formIsValid = false;
+					tempErrors["images"] = "Input not valid";
+					break;
+				}
+			}
+		}
+	}
+	else {
+		if (place.images.trim() ===  "") {
+			formIsValid = false;
+			tempErrors["images"] = "Cannot be empty";
+		}
+		else {
+			let arr = place.images.split(",")
+			for (const [index, image] of arr.entries()) {
+				if (image.trim() === "") {
+					formIsValid = false;
+					tempErrors["images"] = "Input not valid";
+					break;
+				}
+			}
+		}
+	}
 
     setErrors(tempErrors);
     return formIsValid;
