@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Main from './components/main';
 import Detail from './components/detail';
-import PlaceList from './components/crud/PlaceList'
+import Crud from './components/crud'
 import ButterToast,{ POS_RIGHT,POS_TOP } from "butter-toast";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
@@ -17,7 +17,7 @@ class App extends Component {
         <Router>
           <Route exact path="/" component={Main} />
           <Route path="/detail/:id" component={Detail} />
-          <Route path="/crud" component={PlaceList} />
+          <Route path="/crud" component={Crud} />
           <ButterToast position={{vertical:POS_TOP,horizontal:POS_RIGHT}}/>
         </Router>
       </Provider>
