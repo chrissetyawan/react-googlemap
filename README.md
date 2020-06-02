@@ -67,9 +67,7 @@ I made 2 version of react, react with hooks and react with redux
 
 Main Page
 
-
 <a href="https://ibb.co/WVH1G97"><img src="https://i.ibb.co/XYWTjB6/mainpage.png" alt="mainpage" border="0"></a>
-
 
 
 
