@@ -71,7 +71,9 @@ Main Page
 
 
 
+
 Detail Page
+
 
 <a href="https://ibb.co/M7Zybpc"><img src="https://i.ibb.co/bXQjxLs/detailpage.png" alt="detailpage" border="0"></a>
 
