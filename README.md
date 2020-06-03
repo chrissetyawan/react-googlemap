@@ -62,7 +62,7 @@ Open Browser with Url: http://localhost:3000/
 ```
 
 
-I made 2 version of react, react with hooks and react with redux
+I made 3 version of react, using hooks, redux and context API for state management
 
 
 Main Page
@@ -79,7 +79,7 @@ Detail Page
 
 
 
-CRUD Page with hooks
+CRUD Page with hooks/context
 
 ![Screenshoot](https://i.ibb.co/dBgJ22y/crudpage.png)
 
