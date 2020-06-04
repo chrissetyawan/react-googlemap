@@ -140,7 +140,7 @@ const crud = () => {
 					)}
 				</div>
 				<div className="flex-large">
-					<h2>List maps</h2>
+					<h2 style={{marginBottom:'30px'}}>List maps</h2>
 					<Table editRow={editRow} deleteMap={deleteMap} />
 				</div>
 			</div>
